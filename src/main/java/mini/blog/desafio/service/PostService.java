@@ -3,12 +3,13 @@ package mini.blog.desafio.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import mini.blog.desafio.molde.Post;
 import mini.blog.desafio.repository.PostRepository;
-
+@Service
 public class PostService {
 	@Autowired
 	private PostRepository repository;
