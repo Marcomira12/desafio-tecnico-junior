@@ -19,16 +19,16 @@ import mini.blog.desafio.molde.Post;
 import mini.blog.desafio.service.PostService;
 
 @RestController
-@RequestMapping("/Post")
+@RequestMapping("/post")
 public class PostController {
 	@Autowired
 	private PostService postService;
 
-	@PostMapping("/posts ")
+	@PostMapping("/posts")
 	public ResponseEntity<Object> criarPost(@RequestBody Post post) {
 		try {
 			postService.salvar(post);
-			return ResponseEntity.ok().body("Post Realizado");
+			return ResponseEntity.ok().body(post);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao criar Post");
 		}
